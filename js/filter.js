@@ -1,5 +1,5 @@
-var filterDecorazioni = function(checked){
+var filterDecors = function(checked){
   var decors = $("img.decor");
-  if (checked){decors.show()}
-  else {decors.hide()}
+  if (checked){ decors.show(); }
+  else { decors.hide(); }
 }

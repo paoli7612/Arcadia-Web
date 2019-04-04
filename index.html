@@ -6,23 +6,45 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="master.css">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <script type="text/javascript" src="js/options.js"></script>
     <script type="text/javascript" src="js/loadMap.js"></script>
     <script type="text/javascript" src="js/loadTools.js"></script>
     <script type="text/javascript" src="js/filter.js"></script>
+    <script type="text/javascript" src="js/save.js"></script>
   </head>
   <body>
-    <table id="matrix">
+    <table id="matrix" class="w3-left">
     </table>
-    <div id="tools">
-      <h1 id="tool_id">.</h1>
-      <h1 id="tool_type">.</h1>
+    <div id="tiles" class="w3-panel w3-quarter">
     </div>
-    <div id="filter">
-      <label>
-        Mostra Decorazioni
-        <input type="checkbox" checked="checked" onchange="filterDecorazioni(this.checked)">
-      </label>
+    <div id="info" class="w3-panel w3-quarter">
+      <div class="w3-panel w3-blue w3-card-4">
+        <div class="w3-panel">
+          <span id="tool_id">.</span>
+          <span id="tool_type">.</span>
+          <img class="w3-right" src="img/floors/1.png" id="tool_image">
+        </div>
+      </div>
+    </div>
+    <div id="filter" class="w3-panel w3-quarter">
+      <div class="w3-panel w3-blue w3-card-4">
+        <div class="w3-panel">
+          <label> Decors
+            <input type="checkbox" checked="checked" class="w3-check" onchange="filterDecors(this.checked)">
+          </label>
+        </div>
+      </div>
+    </div>
+    <div id="save" class="w3-panel w3-quarter">
+      <div class="w3-panel w3-blue w3-card-4">
+        <div class="w3-panel">
+          <button class="w3-button w3-white w3-card-4" onclick="save()">Salva</button>
+        </div>
+      </div>
     </div>
   </body>
   <script type="text/javascript" src="main.js"></script>
