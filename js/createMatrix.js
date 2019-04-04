@@ -6,13 +6,20 @@ var createMatrix = function(mat){
       var td = document.createElement('td');
       td.className = "tile";
       var img = document.createElement('img');
-      console.log(mat);
+
       if (mat['floors'][y][x]) {
         img.src = "img/floors/"+mat['floors'][y][x]+".png";
       } else {
         img.src = "img/walls/"+mat['walls'][y][x]+".png";
       }
-      td.appendChild(img)
+      td.appendChild(img);
+
+      if (mat['decors'][y][x]){
+        var img = document.createElement('img');
+        img.src = 'img/decors/'+mat['decors'][y][x]+".png";
+        img.className = "decor";
+        td.appendChild(img);
+      }
       tr.appendChild(td);
     }
     table.appendChild(tr);
