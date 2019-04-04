@@ -21,6 +21,6 @@ var save = function(){
     }
   }
   a = JSON.stringify(DATA)
-
+  document.body.innerHTML = a;
   console.log(a);
 }

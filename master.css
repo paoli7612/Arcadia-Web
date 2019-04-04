@@ -1,15 +1,19 @@
-table#matrix {
-  border: solid 3px black;
-}
-div#tiles {
-  border: solid 3px black;
+#tiles, #filter, #options, #form{
   padding: 20px;
   margin: 10px;
+  border: solid 3px black;
+  float: right;
+  width: 20%;
 }
 
-div#info {
+#info {
   float: right;
 }
+
+table#matrix {
+  float: left;
+}
+
 
 td.tile {
   line-height: 0px;
@@ -21,7 +25,18 @@ img {
   width: 32px;
 }
 
+input {
+  width: 100%;
+}
+
 img.decor {
   position: absolute;
+  left: 0px;
+  z-index: 2;
+}
+
+img.cartel {
+  position: absolute;
+  left: 0px;
   z-index: 2;
 }

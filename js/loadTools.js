@@ -10,6 +10,11 @@ var select = function (id, type){
   h1_id.innerHTML = tool_id;
   h1_type.innerHTML = tool_type;
   img.src = "img/"+type+"/"+id+".png";
+  if (type == 'cartels'){
+    $("#form").show();
+  } else {
+    $("#form").hide();
+  }
 
 }
 
@@ -31,15 +36,31 @@ var loadTools = function(){
   load('decors', 5);
   load('floors', 5);
   load('walls', 16);
+  load('cartels', 2)
 }
 
 document.onclick = function (e){
   if (tool_id == null || tool_type == null) return;
   e = e.toElement;
-  if (e.name == 'walls' || e.name == 'floors' ) {
-    e.name = tool_type;
-    e.src = "img/"+tool_type+"/"+tool_id+".png"
-    e.setAttribute('code', tool_id);
-    e.name = tool_type;
+  if (e.name == 'walls' || e.name == 'floors'){
+    if (tool_type == 'decors' || tool_type == 'cartels'){
+      i = document.createElement('img');
+      i.src = "img/"+tool_type+"/"+tool_id+".png";
+      i.setAttribute('code', tool_id);
+      i.name = tool_type;
+      i.className = "decor";
+      if (tool_type == 'cartels'){
+        var text = document.getElementById('formCartel').value;
+        i.setAttribute('text', text);
+      }
+      e.parentElement.appendChild(i);
+    } else  {
+      e.name = tool_type;
+      e.src = "img/"+tool_type+"/"+tool_id+".png"
+      e.setAttribute('code', tool_id);
+      e.name = tool_type;
+    }
+  } else if (e.name == 'decors' || e.name == 'cartels'){
+    e.remove();
   }
 }

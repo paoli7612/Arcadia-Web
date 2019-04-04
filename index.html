@@ -23,13 +23,18 @@
         <img src="" id="tool_image">
       </div>
     </div>
+    <div id="form">
+      <input id="formCartel" type="text" placeholder="Text">
+    </div>
     <div id="filter">
       <label> Decors
         <input type="checkbox" checked="checked" onchange="filterDecors(this.checked)">
       </label>
+      <label> Cartels
+        <input type="checkbox" checked="checked" onchange="filterCartels(this.checked)">
+      </label>
     </div>
-    <div id="save">
-      <input type="text" value="spawn">
+    <div id="options">
       <button onclick="save()">Salva</button>
     </div>
   </body>
