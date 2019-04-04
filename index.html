@@ -7,20 +7,22 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="master.css">
     <script type="text/javascript" src="js/options.js"></script>
-    <script type="text/javascript" src="js/createMatrix.js"></script>
+    <script type="text/javascript" src="js/loadMap.js"></script>
+    <script type="text/javascript" src="js/loadTools.js"></script>
+    <script type="text/javascript" src="js/filter.js"></script>
   </head>
   <body>
-    <div id="title">
+    <table id="matrix">
+    </table>
+    <div id="tools">
+      <h1 id="tool_id">.</h1>
+      <h1 id="tool_type">.</h1>
     </div>
-    <div id="game">
-      <table id="matrix">
-      </table>
-      <div id="gui">
-        <div id="avatar">
-        </div>
-        <div id="stats">
-        </div>
-      </div>
+    <div id="filter">
+      <label>
+        Mostra Decorazioni
+        <input type="checkbox" checked="checked" onchange="filterDecorazioni(this.checked)">
+      </label>
     </div>
   </body>
   <script type="text/javascript" src="main.js"></script>
