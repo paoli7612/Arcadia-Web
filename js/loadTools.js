@@ -15,7 +15,7 @@ var select = function (id, type){
 
 
 var loadTools = function(){
-  var tools = document.getElementById('tiles');
+  var tiles = document.getElementById('tiles');
 
   var load = function(type, len){
     var div = document.createElement('div');
@@ -25,7 +25,7 @@ var loadTools = function(){
       img.setAttribute('onclick', "select("+(i+1)+",'"+type+"')");
       div.appendChild(img);
     }
-    tools.appendChild(div);
+    tiles.appendChild(div);
   }
 
   load('decors', 5);
