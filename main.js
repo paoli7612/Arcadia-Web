@@ -1,7 +1,5 @@
-
-
-var createPlayer = function(x, y){
-  
-}
-
-createTable(30,15);
+$(function(){
+  $.getJSON('maps/spawn.json').done(function (data){
+    createMatrix(data);
+  })
+});
