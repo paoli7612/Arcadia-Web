@@ -1,0 +1,21 @@
+td.tile {
+  line-height: 0px;
+}
+
+img {
+  height: 32px;
+  width: 32px;
+}
+
+table#matrix {
+  margin: auto;
+  border: solid 3px black;
+}
+
+div#title {
+
+}
+
+div#game {
+
+}
