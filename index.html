@@ -12,6 +12,8 @@
     <script type="text/javascript" src="js/loadTools.js"></script>
     <script type="text/javascript" src="js/filter.js"></script>
     <script type="text/javascript" src="js/save.js"></script>
+    <script type="text/javascript" src="js/load.js"></script>
+    <script type="text/javascript" src="js/animation.js"></script>
   </head>
   <body>
     <div class="title">
@@ -31,14 +33,18 @@
     </div>
     <div id="filter" class="panel">
       <label> Decors
-        <input type="checkbox" checked="checked" onchange="filterDecors(this.checked)">
+        <input type="checkbox" checked="checked" onchange="filter(this.checked, 'decors')">
       </label>
       <label> Cartels
-        <input type="checkbox" checked="checked" onchange="filterCartels(this.checked)">
+        <input type="checkbox" checked="checked" onchange="filter(this.checked, 'cartels')">
+      </label>
+      <label> Floors
+        <input type="checkbox" checked="checked" onchange="filter(this.checked, 'floors')">
       </label>
     </div>
     <div id="options" class="panel">
       <button onclick="save()">Salva</button>
+      <button onclick="load()">Carica</button>
     </div>
   </body>
   <script type="text/javascript" src="js/sprites.js"></script>

@@ -1,3 +1,5 @@
+<img src="doc/img/001.png">
+
 ## Matrix
 
 La matrice è una tabella riche/colonne con una/due immagini in ogni cella.
@@ -15,6 +17,9 @@ di dale elemento in un immagine nel info chiamata **tool_image**
 
 Vengono mostrate a video le due variabili **tool_[...]** e mostrata l'anteprima del elemento selezionato
 
-## Save
+## Options
 
-Ritrasforma la tabella (**matrix**) in un json che poi andrà a rispedire al server con il nome dato.
+#### Save
+  Ritrasforma la tabella (**matrix**) in un json che poi andrà a rispedire al server con il nome dato.
+#### Carica
+  Ricarica una pagina su una nuova mappa data

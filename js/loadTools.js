@@ -15,9 +15,7 @@ var select = function (id, type){
   } else {
     $("#form").hide();
   }
-
 }
-
 
 var loadTools = function(){
   var tiles = document.getElementById('tiles');
@@ -34,16 +32,17 @@ var loadTools = function(){
   }
 
   load('decors', 5);
-  load('floors', 5);
+  load('floors', 81);
   load('walls', 16);
-  load('cartels', 2)
+  load('cartels', 2);
+  load('liquids', 3);
 }
 
 document.onclick = function (e){
   e = e.toElement;
   if (tool_id == null || tool_type == null) {}
   else {
-    if (e.className == 'walls' || e.className == 'floors'){
+    if (e.className == 'walls' || e.className == 'floors' || e.className == 'liquids'){
       if (tool_type == 'decors'){
         var img = newImage(tool_id, tool_type);
         e.parentElement.appendChild(img)
@@ -52,7 +51,6 @@ document.onclick = function (e){
         var text = document.getElementById('formCartel').value;
         img.setAttribute('text', text);
         e.parentElement.appendChild(img);
-
       } else {
         var img = newImage(tool_id, tool_type)
         var p = e.parentElement;

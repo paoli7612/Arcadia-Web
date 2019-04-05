@@ -3,9 +3,18 @@ img {
   width: 32px;
 }
 
-input {
+input[type=text] {
   width: 100%;
 }
+
+input[type=checkbox] {
+  transform: scale(2);
+}
+
+label {
+  margin: 10px;
+}
+
 
 td.tile {
   line-height: 0px;

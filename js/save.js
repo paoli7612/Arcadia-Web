@@ -1,9 +1,22 @@
-var save = function(){
+var Matrix = function(x, y){
+  var matrix = [];
+    for(var i=0; i<y; i++) {
+        matrix[i] = [];
+        for(var j=0; j<x; j++) {
+            matrix[i][j] = 0;
+        }
+    }
+    return matrix
+}
 
+var save = function(){
   var rows = document.getElementById('matrix').rows;
 
   DATA['cartels'] = [];
   DATA['decors'] = [];
+  DATA['walls'] = Matrix(TILE_X, TILE_Y);
+  DATA['liquids'] = Matrix(TILE_X, TILE_Y);
+  DATA['floors'] = Matrix(TILE_X, TILE_Y);
 
   for (y=0; y<TILE_Y; y++){
     for (x=0; x<TILE_X; x++){

@@ -4,4 +4,7 @@ $(function(){
     DATA = data;
     loadTools();
   });
+  $('#form').hide();
+
+  setInterval(animateLiquids, 1000);
 });

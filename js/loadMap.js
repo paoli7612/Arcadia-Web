@@ -6,11 +6,14 @@ var loadMap = function(mat){
       var td = document.createElement('td');
       td.className = "tile";
       var f = mat['floors'][y][x];
+      var w = mat['walls'][y][x];
+      var l = mat['liquids'][y][x];
       if (f) {
         img = newImage(f, 'floors');
-      } else {
-        var w = mat['walls'][y][x];
+      } else if (w){
         img = newImage(w, 'walls');
+      } else if (l){
+        img = newImage(l, 'liquids');
       }
       td.appendChild(img);
       tr.appendChild(td);
