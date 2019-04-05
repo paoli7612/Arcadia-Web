@@ -1,10 +1,18 @@
 $(function(){
-  $.getJSON('maps/spawn.json').done(function (data){
+  init();
+  loadTools();
+});
+
+
+var init = function(){
+  $('td').remove();
+  document.getElementById('matrix')
+  nameMap = document.getElementById('nameMap').value;
+  $.getJSON('maps/'+nameMap+'.json').done(function (data){
     loadMap(data);
     DATA = data;
-    loadTools();
   });
   $('#form').hide();
 
   setInterval(animateLiquids, 1000);
-});
+}

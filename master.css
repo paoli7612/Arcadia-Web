@@ -1,4 +1,4 @@
-img {
+img, td {
   height: 32px;
   width: 32px;
 }
@@ -15,6 +15,11 @@ label {
   margin: 10px;
 }
 
+form {
+  margin: 20px;
+  padding: 30px;
+  border: 10px solid black
+}
 
 td.tile {
   line-height: 0px;
@@ -26,8 +31,6 @@ img.decors, img.cartels {
   left: 0px;
   z-index: 2;
 }
-
-
 
 div.panel{
   border: solid 3px black;
@@ -41,6 +44,6 @@ div.panel{
   float: right;
 }
 
-table#matrix {
+table#matrix, form {
   float: left;
 }
