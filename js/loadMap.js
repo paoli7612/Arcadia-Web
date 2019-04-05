@@ -5,33 +5,28 @@ var loadMap = function(mat){
     for (var x=0; x<TILE_X; x++){
       var td = document.createElement('td');
       td.className = "tile";
-      var img = document.createElement('img');
-
-
       var f = mat['floors'][y][x];
       if (f) {
-        img.src = "img/floors/"+f+".png";
-        img.name = "floors";
-        img.setAttribute('code', f);
+        img = newImage(f, 'floors');
       } else {
         var w = mat['walls'][y][x];
-        img.src = "img/walls/"+w+".png";
-        img.name = "walls";
-        img.setAttribute('code', w);
+        img = newImage(w, 'walls');
       }
       td.appendChild(img);
-
-      var d = mat['decors'][y][x];
-      if (d){
-        var img = document.createElement('img');
-        img.src = 'img/decors/'+d+".png";
-        img.className = "decor";
-        img.name = "decors";
-        img.setAttribute('code', d);
-        td.appendChild(img);
-      }
       tr.appendChild(td);
     }
     table.appendChild(tr);
+  }
+
+  var cartels = mat["cartels"];
+  for (var i=0; i<cartels.length; i++){
+    c = cartels[i];
+    newCartel(c[0],c[1],c[2],c[3])
+  }
+
+  var decors = mat["decors"];
+  for (var i=0; i<decors.length; i++){
+    c = decors[i];
+    newDecor(c[0],c[1],c[2])
   }
 }

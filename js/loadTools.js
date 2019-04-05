@@ -24,10 +24,10 @@ var loadTools = function(){
 
   var load = function(type, len){
     var div = document.createElement('div');
-    for (i=0; i<len; i++){
-      img = document.createElement('img');
-      img.src="img/"+type+"/"+(i+1)+".png";
-      img.setAttribute('onclick', "select("+(i+1)+",'"+type+"')");
+    for (id=1; id<=len; id++){
+      var img = newImage(id, type);
+      img.className = "tool";
+      img.setAttribute('onclick', "select("+id+",'"+type+"')");
       div.appendChild(img);
     }
     tiles.appendChild(div);
@@ -40,27 +40,27 @@ var loadTools = function(){
 }
 
 document.onclick = function (e){
-  if (tool_id == null || tool_type == null) return;
   e = e.toElement;
-  if (e.name == 'walls' || e.name == 'floors'){
-    if (tool_type == 'decors' || tool_type == 'cartels'){
-      i = document.createElement('img');
-      i.src = "img/"+tool_type+"/"+tool_id+".png";
-      i.setAttribute('code', tool_id);
-      i.name = tool_type;
-      i.className = "decor";
-      if (tool_type == 'cartels'){
+  if (tool_id == null || tool_type == null) {}
+  else {
+    if (e.className == 'walls' || e.className == 'floors'){
+      if (tool_type == 'decors'){
+        var img = newImage(tool_id, tool_type);
+        e.parentElement.appendChild(img)
+      } else if (tool_type == 'cartels'){
+        var img = newImage(tool_id, tool_type)
         var text = document.getElementById('formCartel').value;
-        i.setAttribute('text', text);
+        img.setAttribute('text', text);
+        e.parentElement.appendChild(img);
+
+      } else {
+        var img = newImage(tool_id, tool_type)
+        var p = e.parentElement;
+        e.remove();
+        p.appendChild(img);
       }
-      e.parentElement.appendChild(i);
-    } else  {
-      e.name = tool_type;
-      e.src = "img/"+tool_type+"/"+tool_id+".png"
-      e.setAttribute('code', tool_id);
-      e.name = tool_type;
+    } else if (e.className == 'decors' || e.className == 'cartels'){
+      e.remove();
     }
-  } else if (e.name == 'decors' || e.name == 'cartels'){
-    e.remove();
   }
 }

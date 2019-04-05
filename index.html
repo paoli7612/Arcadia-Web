@@ -14,19 +14,22 @@
     <script type="text/javascript" src="js/save.js"></script>
   </head>
   <body>
+    <div class="title">
+      <h1>Map Editor - SPAWN</h1>
+    </div>
     <table id="matrix">
     </table>
-    <div id="tiles">
+    <div id="tiles" class="panel">
       <div id="info">
-        <span id="tool_id">.</span>
-        <span id="tool_type">.</span>
-        <img src="" id="tool_image">
+        <span id="tool_id">0</span>
+        <span id="tool_type">null</span>
+        <img src="img/0.png" id="tool_image">
       </div>
     </div>
-    <div id="form">
+    <div id="form" class="panel">
       <input id="formCartel" type="text" placeholder="Text">
     </div>
-    <div id="filter">
+    <div id="filter" class="panel">
       <label> Decors
         <input type="checkbox" checked="checked" onchange="filterDecors(this.checked)">
       </label>
@@ -34,9 +37,10 @@
         <input type="checkbox" checked="checked" onchange="filterCartels(this.checked)">
       </label>
     </div>
-    <div id="options">
+    <div id="options" class="panel">
       <button onclick="save()">Salva</button>
     </div>
   </body>
+  <script type="text/javascript" src="js/sprites.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </html>
