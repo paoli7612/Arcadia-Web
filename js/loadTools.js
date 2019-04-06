@@ -36,10 +36,25 @@ var loadTools = function(){
   load('walls', 16);
   load('cartels', 2);
   load('liquids', 3);
+
 }
 
 document.onclick = function (e){
-  e = e.toElement;
+  change(e.toElement)
+}
+
+var scroll = false;
+document.onmousemove = function(e){
+  if (scroll)
+    change(e.path[0]);
+}
+document.onkeypress = function(e){
+  if (e.key == 'q')
+    scroll = !scroll;
+}
+
+
+var change = function(e){
   if (tool_id == null || tool_type == null) {}
   else {
     if (e.className == 'walls' || e.className == 'floors' || e.className == 'liquids'){
