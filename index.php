@@ -20,6 +20,7 @@
         <option value="spawn">SPAWN</option>
         <option value="desert">DESERT</option>
         <option value="template1">TEMPLATE1</option>
+        <option value="grass">GRASS</option>
       </select>
       <input type="submit" value="Carica">
     </form>
